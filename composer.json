@@ -1,0 +1,25 @@
+{
+    "name": "phpitou/pitoufw",
+    "authors": [
+        {
+            "name": "Peter Cauty",
+            "email": "peter@cauty.fr",
+            "homepage": "https://peter.cauty.fr",
+            "role": "Developer"
+        }
+    ],
+    "version": "3.0.0",
+    "minimum-stability": "stable",
+    "license": "MIT",
+    "require": {
+        "php": "^8.0",
+        "philipp15b/php-i18n": "^4.0",
+        "justauthme/php-sdk": "^1.1.1",
+        "ext-iconv": "*",
+        "ext-curl": "*",
+        "ext-json": "*",
+        "ext-pdo": "*",
+        "ext-openssl": "*",
+        "ext-redis": "*"
+    }
+}

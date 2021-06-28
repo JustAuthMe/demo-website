@@ -1,1 +1,1 @@
-# demo-website
+# JustAuthMe demo website
