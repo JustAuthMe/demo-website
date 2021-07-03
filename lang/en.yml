@@ -48,3 +48,4 @@ jam:
 logout:
   success: 'You are successfully logged out.'
   error: 'An unknown error appeared during sign out.'
+delete: 'Your account has been successfully deleted.'

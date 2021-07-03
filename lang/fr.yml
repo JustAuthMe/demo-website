@@ -48,3 +48,4 @@ jam:
 logout:
   success: 'Vous êtes bien déconnecté.'
   error: 'Une erreur inconnue est survenue durant la déconnexion.'
+delete: 'Votre compte démo a correctement été supprimé.'

@@ -20,7 +20,7 @@ if (UserModel::isLogged()): ?>
                         <i class="fas fa-user-times pr-1"></i>
                         <?= L::home_user_quit ?>
                     </a>
-                    <a href="<?= webroot() ?>user/delete" class="btn btn-danger btn-marketing rounded-pill mb-2" onclick="return confirm('Êtes-vous sur ?')">
+                    <a href="<?= webroot() ?>user/delete" class="btn btn-danger btn-marketing rounded-pill mb-2" onclick="return confirm('<?= L::rusure ?>')">
                         <i class="fas fa-user-slash pr-1"></i>
                         <?= L::home_user_delete ?>
                     </a>

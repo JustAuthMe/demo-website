@@ -26,7 +26,6 @@ if (isset($_GET['access_token'])) {
             // Registration
             $user = new User();
             $user->setJamId($response->jam_id)
-                ->setEmail($response->email)
                 ->setFullname(trim(($response->firstname ?? '') . ' ' . ($response->lastname ?? '')));
             $uid = $user->save();
             $user = User::read($uid);

@@ -13,6 +13,6 @@ if (UserModel::isLogged()) {
     }
     $user->delete();
 
-    Alert::success('Votre compte démo a correctement été supprimé.');
+    Alert::success(L::delete);
     Router::redirect();
 }

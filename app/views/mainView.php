@@ -73,7 +73,7 @@ use function PitouFW\Core\webroot;
                     <?php require_once @$appView; ?></main>
             </div>
             <div id="layoutDefault_footer">
-                <footer class="footer pt-10 pb-5 mt-auto bg-white footer-light">
+                <footer class="footer  pt-3 pb-5 mt-auto bg-white footer-light">
                     <div class="container">
                         <hr class="my-5" />
                         <div class="row align-items-center">
