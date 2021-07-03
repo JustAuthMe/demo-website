@@ -11,7 +11,6 @@ use PitouFW\Model\UserModel;
 
 class User extends Entity {
     private string $jam_id = '';
-    private string $email = '';
     private string $fullname = '';
     private string $picture = '';
     private ?string $reg_timestamp = null;
@@ -36,22 +35,6 @@ class User extends Entity {
      */
     public function setJamId(string $jam_id): User {
         $this->jam_id = $jam_id;
-        return $this;
-    }
-
-    /**
-     * @return string
-     */
-    public function getEmail(): string {
-        return $this->email;
-    }
-
-    /**
-     * @param string $email
-     * @return User
-     */
-    public function setEmail(string $email): User {
-        $this->email = $email;
         return $this;
     }
 

@@ -1,3 +1,12 @@
+.lang-selector .dropdown-menu {
+    min-width: auto;
+}
+
+.lang-selector #selected-lang,
+.lang-selector .dropdown-item {
+    color: #888;
+}
+
 .endless-form {
     max-height:400px;
     overflow: hidden;

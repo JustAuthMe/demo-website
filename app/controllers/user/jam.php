@@ -20,40 +20,30 @@ if (isset($_GET['access_token'])) {
     if (User::exists('jam_id', $response->jam_id)) {
         // Login
         $user = User::readBy('jam_id', $response->jam_id);
-
-        Alert::success(L::login_success);
         $user->login(UserModel::SESSION_CACHE_TTL_LONG);
     } else {
-        if (isset($response->email)) {
-            if (User::exists('email', $response->email)) {
-                // Account linking
-                $user = User::readBy('email', $response->email);
-                $user->setJamId($response->jam_id);
-                $user->save();
-            } else {
-                // Registration
-                $user = new User();
-                $user->setJamId($response->jam_id)
-                    ->setEmail($response->email)
-                    ->setFullname(trim(($response->firstname ?? '') . ' ' . ($response->lastname ?? '')));
-                $uid = $user->save();
-                $user = User::read($uid);
+        if (isset($response->firstname)) {
+            // Registration
+            $user = new User();
+            $user->setJamId($response->jam_id)
+                ->setEmail($response->email)
+                ->setFullname(trim(($response->firstname ?? '') . ' ' . ($response->lastname ?? '')));
+            $uid = $user->save();
+            $user = User::read($uid);
 
-                if (isset($response->avatar)) {
-                    $filetype = preg_replace("#^data\:image\/([a-z]+)\;.*$#", "$1", $response->avatar);
-                    if (in_array($filetype, ['jpeg', 'jpg', 'png'])) {
-                        $image = file_get_contents($response->avatar);
-                        $filename = $user->getId() . substr(md5(uniqid()), 0, 8);
-                        $filepath = 'uploads/' . $filename . '.' . $filetype;
-                        file_put_contents(PUBLICROOT . $filepath, $image);
+            if (isset($response->avatar)) {
+                $filetype = preg_replace("#^data\:image\/([a-z]+)\;.*$#", "$1", $response->avatar);
+                if (in_array($filetype, ['jpeg', 'jpg', 'png'])) {
+                    $image = file_get_contents($response->avatar);
+                    $filename = $user->getId() . substr(md5(uniqid()), 0, 8);
+                    $filepath = 'uploads/' . $filename . '.' . $filetype;
+                    file_put_contents(PUBLICROOT . $filepath, $image);
 
-                        $user->setPicture($filepath)
-                            ->save();
-                    }
+                    $user->setPicture($filepath)
+                        ->save();
                 }
             }
 
-            Alert::success(L::login_success);
             $user->login(UserModel::SESSION_CACHE_TTL_LONG);
         } else {
             // The user need to remove the service from their JustAuthMe app and try again
