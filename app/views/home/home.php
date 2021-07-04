@@ -5,12 +5,12 @@ use function PitouFW\Core\t;
 use function PitouFW\Core\webroot;
 
 if (UserModel::isLogged()): ?>
-<header class="page-header page-header-light bg-white">
+<header class="page-header page-header-light bg-white pt-5 pt-lg-15">
     <div class="page-header-content">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-xl-8 col-lg-10 text-center">
-                    <img class="mb-4 rounded-pill" src="<?= WEBROOT . UserModel::get()->getPicture() ?>" style="width: 15rem;" />
+                    <img class="mb-4 rounded-pill" src="<?= WEBROOT . UserModel::get()->getPicture() ?>" style="width:15rem;max-width:60%;" />
                     <h1 class="page-header-title"><?= L::home_user_hello(UserModel::get()->getFullname()) ?></h1>
                     <p class="page-header-text">
                         <?= L::home_user_welcome ?><br />

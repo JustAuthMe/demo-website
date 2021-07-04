@@ -38,7 +38,7 @@ use function PitouFW\Core\webroot;
 		<meta name="format-detection" content="telephone=no" />
 
         <link rel="icon" type="image/x-icon" href="<?= IMG ?>icon.png" />
-	</head>
+    </head>
 
     <body>
         <div id="layoutDefault">
@@ -58,7 +58,9 @@ use function PitouFW\Core\webroot;
                                     <a class="dropdown-item" href="<?= WEBROOT ?>fr<?= Request::get()->getRoute() ?>">🇫🇷 FR</a>
                                 </div>
                             </div>
-                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><i data-feather="menu"></i></button>
+                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                                <i class="fas fa-bars"></i>
+                            </button>
                             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                                 <ul class="navbar-nav ml-auto mr-lg-5">
                                     <li class="nav-item"><a class="nav-link" target="_blank" rel="noopener" href="https://justauth.me/<?= t()->getAppliedLang() ?>/"><?= L::nav_download ?> </a></li>

@@ -22,3 +22,4 @@ log/*.log
 cache/*.php
 public/uploads/*.png
 public/uploads/*.jp*
+app/controllers/migrate.php
