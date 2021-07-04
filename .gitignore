@@ -20,4 +20,5 @@ demo/
 log/*.log
 .DS_Store
 cache/*.php
-public/uploads/*
+public/uploads/*.png
+public/uploads/*.jp*
